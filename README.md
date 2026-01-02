@@ -43,11 +43,27 @@ This project demonstrates the deployment of a secure and high-performance networ
 
 ### Failover Demonstration
 
-_(Place a screenshot or GIF here showing Server 1 going DOWN and Traffic moving to Server 2)_
+![HAProxy Status](assets/Failover1.PNG)
+
+> **Figure 1:** HAProxy Status Page. Notice that **Server 1 is marked DOWN (Red)** automatically after the health check failed, while Server 2 remains UP.
+
+![Failover Result](assets/Failover2.PNG)
+
+> **Figure 2:** Client Traffic Verification. The `curl` loop shows that 100% of traffic is redirected to **SERVER NODE 02**, ensuring zero downtime for users.
 
 ### DDoS Attack Blocking
 
-_(Place a screenshot of Apache Benchmark result showing Non-2xx responses)_
+![DDoS Attack Execution](assets/DDos1.PNG)
+
+> **Figure 3:** Executing the attack simulation targeting the OPNsense Gateway.
+
+![DDoS Attack Result](assets/DDos2.PNG)
+
+> **Figure 4:** Stress Test Results.
+>
+> - **Total Requests:** 1000
+> - **Non-2xx responses:** 980 (Blocked by HAProxy with HTTP 429)
+> - **Success Rate:** Only ~20 requests were allowed within the time window, proving the Rate Limiting is effective.
 
 ## 📂 Project Structure
 
