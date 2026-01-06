@@ -1,4 +1,4 @@
-# OPNsense Firewall System with IDS/IPS & High Availability Load Balancing
+# BUILDING AN OPEN-SOURCE OPNSENSE FIREWALL WITH INTEGRATED SECURITY FEATURES
 
 ![Network Topology](assets/topology_network.png)
 
