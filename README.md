@@ -6,6 +6,19 @@
 
 This project demonstrates the deployment of a secure and high-performance network infrastructure using **OPNsense**. The system integrates **Suricata (IPS)** for intrusion prevention, **Unbound DNS** for web filtering, and **HAProxy** for Layer 7 Load Balancing with ACL and Rate Limiting capabilities.
 
+🧠 Packet Processing Pipeline
+To ensure Defense in Depth, every request from the WAN interface must pass through a strict 3-layer security pipeline before reaching the internal Web Servers:
+
+![Packet Processing Pipeline](assets/packet_pipeline.png)
+
+Logical Flow:
+
+Unbound DNS: Blocks restricted domains immediately (DNS Sinkhole).
+
+Suricata IPS: Deep Packet Inspection (DPI) to drop malware signatures.
+
+HAProxy WAF: Filters traffic based on ACLs and Rate Limits before Load Balancing.
+
 ## 🛠️ Technology Stack
 
 - **Core System:** OPNsense Firewall (FreeBSD based).
